@@ -8,7 +8,7 @@ export interface Props {
 class Square extends React.Component<Props, object> {
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={() => console.log('click')}>
         {/* TODO */}
         {this.props.value}
       </button>
@@ -22,7 +22,7 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = 'Next player...: X';
 
     return (
       <div>
