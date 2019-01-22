@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
 
-export interface Props {
+export interface IProps {
   value: number;
 }
 
-class Square extends React.Component<Props, object> {
+export interface IState {
+  value: number;
+}
+
+class Square extends React.Component<IProps, IState> {
+  constructor(props:IState){
+    super(props);
+    this.state = {
+      value:this.props.value
+    };
+  }
+
   render() {
     return (
       <button className="square" onClick={() => console.log('click')}>
         {/* TODO */}
-        {this.props.value}
+        {this.state.value}
       </button>
     );
   }
